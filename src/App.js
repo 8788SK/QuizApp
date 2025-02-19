@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+// Import necessary libraries
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const quizData = {
   HTML: [
@@ -66,16 +68,272 @@ const quizData = {
     }
   ],
   CSS: [
-    { question: "What does CSS stand for?", options: ["Cascading Style Sheets", "Colorful Style Sheets", "Creative Style Sheets", "Computer Style Sheets"], answer: 0, explanation: "CSS stands for Cascading Style Sheets." },
-    // Add more CSS questions...
+    {
+      "question": "What does HTML stand for?",
+      "options": [
+        "HyperText Markup Language",
+        "Hyper Transfer Markup Language",
+        "High-Level Text Markup Language",
+        "Hyperlink and Text Markup Language"
+      ],
+      "answer": 0,
+      "explanation": "HTML stands for HyperText Markup Language."
+    },
+    {
+      "question": "Which HTML tag is used to define an internal style sheet?",
+      "options": ["<script>", "<style>", "<css>", "<link>"],
+      "answer": 1,
+      "explanation": "The <style> tag is used to define internal CSS styles."
+    },
+    {
+      "question": "Which property is used to change the background color in CSS?",
+      "options": ["color", "bgcolor", "background-color", "background"],
+      "answer": 2,
+      "explanation": "The background-color property is used to change the background color."
+    },
+    {
+      "question": "What is the correct way to apply a CSS class to an element?",
+      "options": [
+        "<div id='classname'>",
+        "<div class='classname'>",
+        "<div style='classname'>",
+        "<div css='classname'>"
+      ],
+      "answer": 1,
+      "explanation": "CSS classes are applied using the class attribute, like <div class='classname'>."
+    },
+    {
+      "question": "Which unit is NOT relative in CSS?",
+      "options": ["em", "rem", "px", "%"],
+      "answer": 2,
+      "explanation": "px (pixels) is an absolute unit, whereas em, rem, and % are relative units."
+    },
+    {
+      "question": "Which pseudo-class is used to style an element when a user hovers over it?",
+      "options": [":hover", ":focus", ":active", ":visited"],
+      "answer": 0,
+      "explanation": "The :hover pseudo-class applies styles when the user hovers over an element."
+    },
+    {
+      "question": "Which of the following is NOT a valid CSS position value?",
+      "options": ["static", "fixed", "absolute", "relative-fixed"],
+      "answer": 3,
+      "explanation": "'relative-fixed' is not a valid CSS position value."
+    },
+    {
+      "question": "Which CSS property controls the text size?",
+      "options": ["font-size", "text-style", "text-size", "font-style"],
+      "answer": 0,
+      "explanation": "The font-size property is used to control text size in CSS."
+    },
+    
+    {
+      "question": "How do you make a flex container in CSS?",
+      "options": [
+        "display: flex;",
+        "display: grid;",
+        "flexbox: true;",
+        "container: flex;"
+      ],
+      "answer": 0,
+      "explanation": "To create a flex container, use 'display: flex;'."
+    },
+    {
+      "question": "How do you make a flex container in CSS?",
+      "options": [
+        "display: flex;",
+        "display: grid;",
+        "flexbox: true;",
+        "container: flex;"
+      ],
+      "answer": 0,
+      "explanation": "To create a flex container, use 'display: flex;'."
+    }
   ],
   JavaScript: [
-    { question: "Which function is used to serialize an object into a JSON string in Javascript?", options: ["stringify()", "parse()", "convert()", "None of the above"], answer: 0, explanation: "stringify() is used to serialize an object into a JSON string in Javascript." },
-    // Add more JavaScript questions...
+    {
+      question: 'Which function is used to serialize an object into a JSON string in Javascript?',
+      options: ['stringify()', 'parse()', 'convert()', 'None of the above'],
+      answer: 0,
+      explanation: 'stringify() is used to serialize an object into a JSON string in Javascript.',
+    },
+    {
+      question: 'Which of the following keywords is used to define a variable in Javascript?',
+      options: ['var', 'let', 'var and let', 'None of the above'],
+      answer: 2,
+      explanation: 'Both "var" and "let" are used to define a variable in Javascript.',
+    },
+    {
+      question: 'Which of the following methods can be used to display data in some form using Javascript?',
+      options: ['document.write()', 'console.log()', 'window.alert', 'All of the above'],
+      answer: 3,
+      explanation: 'All of the above methods can be used to display data in some form.',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      options: ['const', 'var', 'let', 'constant'],
+      answer: 0,
+      explanation: 'const is used to declare a constant type in Javascript.',
+    },
+    {
+      question: 'Inside which HTML element do we put the JavaScript?',
+      options: ['<javascript>', '<js>', '<src>', '<script>'],
+      answer: 3,
+      explanation: 'The correct element is <script> for including Javascript code in HTML.',
+    },
+    {
+      question: 'Where is the correct place to insert a JavaScript?',
+      options: ['Both the head section and the body section are correct', 'The head section', 'The body section', 'None of the above'],
+      answer: 0,
+      explanation: 'JavaScript can be inserted in both the head section and the body section of HTML.',
+    },
+    {
+      question: "What is the correct syntax for referring to an external script called 'gfg.js'?",
+      options: ['<script name="gfg.js">', '<script href="gfg.js">', '<script src="gfg.js">', 'None of these'],
+      answer: 2,
+      explanation: 'The correct syntax is <script src="gfg.js"> to refer to an external script.',
+    },
+    {
+      question: 'How many ways are there with which we can declare a variable in Javascript?',
+      options: ['Only one', 'Three', 'Infinitely many', 'None of the above'],
+      answer: 1,
+      explanation: 'There are three ways to declare a variable: var, let, and const.',
+    },
+    {
+      question: "What will be the output of the following code? document.write(typeof('1' + 2));",
+      options: ['boolean', 'string', 'number', 'None of the above'],
+      answer: 1,
+      explanation: 'The result of the expression "1" + 2 will be a string, so the output will be "string".',
+    },
+    {
+      question: "What will be the output of the following code snippet: let gfg = 'GeeksforGeeks'; console.log(gfg.indexOf('G'));",
+      options: ['8', '0', '-1', '2'],
+      answer: 1,
+      explanation: 'The method indexOf returns the index of the first occurrence of the specified character, in this case, "G" at index 0.',
+    }
   ],
   ReactQuiz: [
-    { question: "What is React primarily used for?", options: ["Backend development", "Building user interfaces", "Database management", "None of the above"], answer: 1, explanation: "React is a library for building user interfaces." },
-    
+    {
+      question: "1. What is React primarily used for?",
+      options: [
+        "Backend development",
+        "Building user interfaces",
+        "Database management",
+        "None of the above",
+      ],
+      answer: 1,
+      explanation: "React is a library for building user interfaces.",
+    },
+    {
+      question:
+        "2. Which hook is used to manage state in function components? ",
+      options: ["useEffect", "useState", " useContext", " useReducer"],
+      answer: 1,
+      explanation:
+        "useState hook allows you to add state to functional Component",
+    },
+
+    {
+      question: "3. Which of the following is true about React Router? ",
+      options: [
+        "It is used for state management",
+        "It is used to handle navigation between components",
+        "It is used for styling components",
+        "It is used for managing API requests",
+      ],
+      answer: 1,
+      explanation: "It is used to handle navigation between components",
+    },
+
+    {
+      question:
+        "4. Which of the following is used in React.js to increase performance?",
+      options: [
+        "Virtual DOM",
+        "Original DOM",
+        "Both A and B",
+        "None of the above",
+      ],
+      answer: 0,
+      explanation: "Virtual DOM is used in React.js to increase performance.",
+    },
+
+    {
+      question: "5. What are Props in React?",
+      options: [
+        "Data passed from a parent component to a child component",
+        "Internal state of a component",
+        "External libraries used in React",
+        "Functions inside a component",
+      ],
+      answer: 0,
+      explanation:
+        "props are immutable input passed from a parent component to a child component",
+    },
+
+    {
+      question: "6.	Which of the following is true about React components?",
+      options: [
+        "They must always be written as ES6 classes",
+        "They can only return one root element",
+        "They can return multiple root elements",
+        "They cannot handle events",
+      ],
+      answer: 1,
+      explanation:
+        "React components must return a single root element, but this root element can contain any number of children.",
+    },
+    {
+      question:
+        "7. Which of the following is a correct way to define a component's initial state in a class component?",
+      options: [
+        "Inside the render() method",
+        "Inside the constructor() method",
+        "Outside the class definition",
+        "Directly inside the class body",
+      ],
+      answer: 1,
+      explanation:
+        "The initial state of a class component in React should be set inside the constructor() method of the class.",
+    },
+    {
+      question:
+        "8. In React, how do you attach an event handler to an element?",
+      options: [
+        "Using the onEvent attribute",
+        "Using the addEventListener method",
+        "Using the handleEvent method",
+        "None of the above",
+      ],
+      answer: 0,
+      explanation:
+        "In React, event handlers are attached using attributes like onClick, onChange, etc., which correspond to standard DOM events.",
+    },
+    {
+      question: "9. How do you pass an argument to an event handler in React?",
+      options: [
+        "By using an arrow function in the onClick attribute",
+        "By using the bind method",
+        "Both a and b",
+        "None of the above",
+      ],
+      answer: 2,
+      explanation:
+        "In React, you can pass an argument to an event handler either by using an arrow function or by using the bind method in the event handler attribute.",
+    },
+    {
+      question:
+        "10. Which operator is commonly used for inline conditional rendering in React?",
+      options: [
+        "&& (Logical AND)",
+        "|| (Logical OR)",
+        "? : (Ternary Operator)",
+        "== (Equality)",
+      ],
+      answer: 0,
+      explanation:
+        "In React, the logical AND (&&) operator is commonly used for inline conditional rendering, allowing components or elements to render only if a specific condition is true.",
+    },
   ]
 };
 
@@ -141,6 +399,24 @@ function App() {
       </div>
     </div>
   );
+
+  const renderAbout=()=>{
+    <div class="Container">
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      AboutUS
+      valid
+    </div>
+  }
 
   const renderRegister = () => (
     <div style={{
@@ -310,7 +586,66 @@ function App() {
       </div>
     </div>
   );
+ const renderContact =() =>{
+  <>
+  <div className="contact-us">
+                <div
+                  className="p-5"
+                  style={{
+                    backgroundColor: "rgb(14 83 142)",
+                    color: "white",
+                  }}
+                >
+                  <div class="header-content-wrapper p-3">
+                    <div class="header-content">
+                      <h1 class="header-heading pb-4">Get in touch</h1>
+                      <div class="header-description pb-2">
+                        Want to get in touch? We'd love to hear from you.
+                      </div>
+                      <div className="pb-5">Here's how you can reach us.</div>
+                    </div>
+                  </div>
+                </div>
 
+                <div
+                  className="row d-flex justify-content-end gap-5 text"
+                  style={{
+                    position: "relative",
+                    top: "-50px",
+                    width: "95%",
+                    marginLeft: "2rem",
+                    marginRight: "2rem",
+                  }}
+                >
+                  <div className="col-lg-4 col-md-4 col-sm-6 card p-4 m-2">
+                    <div className="d-flex justify-content-center fw-bold">
+                      Talk to us
+                    </div>
+                    <div className="p-3">
+                      Just pick up the phone to call our team member.
+                    </div>
+                    <div className="d-flex justify-content-center fw-bold">
+                      +91-1111-000-222
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-4 col-sm-6 card p-4 m-2 d-flex justify-content-center">
+                    <div className="d-flex justify-content-center fw-bold">
+                      Contact Customer Support
+                    </div>
+                    <div className="p-3 d-flex justify-content-center">
+                      Need a little help...
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      Don't worry… we're here for you.
+                    </div>
+                    <div className="d-flex justify-content-center pt-2 fw-bold">
+                      quiz-help@gmail.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </>
+ }
   const renderCertificate = () => (
     <div style={{
       backgroundImage: 'url(./assets/Grad.webp)',
@@ -349,34 +684,78 @@ function App() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light my-1" style={{ borderRadius: "20px" }}>
-        <a className="navbar-brand" to="#"><b>QuizApp</b></a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse pr-2" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
-              <a className="nav-link" to="/">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" to="/about">About</a>
-            </li>
-            <li className="nav-item">
-            <a className="nav-link" to="contact" onClick={() => setStep('renderContact()')}>
-              Contact
-</a>
-            </li>
-          </ul> 
-        </div>
-      </nav>
-
-      {step === 'home' && renderHome()}
-      {step === 'register' && renderRegister()}
-      {step === 'quiz' && renderQuiz()}
-      {step === 'selectTopic' && renderSelectTopic()}
-      {step === 'result' && renderResult()}
-      {step === 'certificate' && renderCertificate()}
+      <BrowserRouter>
+      <div>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-2">
+          <div className="container">
+            <a className="navbar-brand" href="#">
+              Quiz App
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className=" collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item">
+                  <Link className="nav-Link text-decoration-none text-white" to="home">
+                    Home
+                  </Link>
+                </li>
+              </ul>
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link
+                    className="nav-Link text-decoration-none text-white"
+                    to="contact"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to ="about"
+                  >
+                    About Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              {/* Renders the Navigation Bar on the appropriate screen based on the current step */}
+              {step === "register" && renderRegister()}
+              {step === "selectTopic" && renderSelectTopic()}
+              {step === "quiz" && renderQuiz()}
+              {step === "result" && renderResult()}
+              {step === "certificate" && renderCertificate()}
+              {step === "contact" && renderContact()}
+              {step === "home" && renderHome()}
+              {step === "about" && renderAbout()}
+            </div>
+          }
+        />
+        <Route path="/contact"element={renderContact()} />
+        <Route path="/home" element={renderHome()} />
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
