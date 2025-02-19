@@ -1,8 +1,6 @@
-// Import necessary libraries
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 const quizData = {
   HTML: [
@@ -92,15 +90,15 @@ const quizData = {
       "explanation": "The background-color property is used to change the background color."
     },
     {
-      "question": "What is the correct way to apply a CSS class to an element?",
+      "question": "What is the correct way to apply a CSS className to an element?",
       "options": [
         "<div id='classname'>",
-        "<div class='classname'>",
+        "<div className='classname'>",
         "<div style='classname'>",
         "<div css='classname'>"
       ],
       "answer": 1,
-      "explanation": "CSS classes are applied using the class attribute, like <div class='classname'>."
+      "explanation": "CSS classes are applied using the className attribute, like <div className='classname'>."
     },
     {
       "question": "Which unit is NOT relative in CSS?",
@@ -109,10 +107,10 @@ const quizData = {
       "explanation": "px (pixels) is an absolute unit, whereas em, rem, and % are relative units."
     },
     {
-      "question": "Which pseudo-class is used to style an element when a user hovers over it?",
+      "question": "Which pseudo-className is used to style an element when a user hovers over it?",
       "options": [":hover", ":focus", ":active", ":visited"],
       "answer": 0,
-      "explanation": "The :hover pseudo-class applies styles when the user hovers over an element."
+      "explanation": "The :hover pseudo-className applies styles when the user hovers over an element."
     },
     {
       "question": "Which of the following is NOT a valid CSS position value?",
@@ -285,16 +283,16 @@ const quizData = {
     },
     {
       question:
-        "7. Which of the following is a correct way to define a component's initial state in a class component?",
+        "7. Which of the following is a correct way to define a component's initial state in a className component?",
       options: [
         "Inside the render() method",
         "Inside the constructor() method",
-        "Outside the class definition",
-        "Directly inside the class body",
+        "Outside the className definition",
+        "Directly inside the className body",
       ],
       answer: 1,
       explanation:
-        "The initial state of a class component in React should be set inside the constructor() method of the class.",
+        "The initial state of a className component in React should be set inside the constructor() method of the className.",
     },
     {
       question:
@@ -399,24 +397,6 @@ function App() {
       </div>
     </div>
   );
-
-  const renderAbout=()=>{
-    <div class="Container">
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      AboutUS
-      valid
-    </div>
-  }
 
   const renderRegister = () => (
     <div style={{
@@ -586,6 +566,9 @@ function App() {
       </div>
     </div>
   );
+  const renderAbout=()=>{
+    <h1>About US</h1>
+  }
  const renderContact =() =>{
   <>
   <div className="contact-us">
@@ -596,10 +579,10 @@ function App() {
                     color: "white",
                   }}
                 >
-                  <div class="header-content-wrapper p-3">
-                    <div class="header-content">
-                      <h1 class="header-heading pb-4">Get in touch</h1>
-                      <div class="header-description pb-2">
+                  <div className="header-content-wrapper p-3">
+                    <div className="header-content">
+                      <h1 className="header-heading pb-4">Get in touch</h1>
+                      <div className="header-description pb-2">
                         Want to get in touch? We'd love to hear from you.
                       </div>
                       <div className="pb-5">Here's how you can reach us.</div>
@@ -608,7 +591,7 @@ function App() {
                 </div>
 
                 <div
-                  className="row d-flex justify-content-end gap-5 text"
+                  className="row d-flex justify-content-end gap-5 pe-3"
                   style={{
                     position: "relative",
                     top: "-50px",
@@ -683,12 +666,11 @@ function App() {
   );
 
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-2">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-1">
           <div className="container">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Quiz App
             </a>
             <button
@@ -703,32 +685,33 @@ function App() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className=" collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ms-auto">
+              <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-Link text-decoration-none text-white" to="home">
+                  <a className="nav-link active" aria-current="page" href="/">
                     Home
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link
-                    className="nav-Link text-decoration-none text-white"
-                    to="contact"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link
+                  <a
                     className="nav-link active"
                     aria-current="page"
-                    to ="about"
+                    href="contact"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="about"
                   >
                     About Us
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -746,17 +729,135 @@ function App() {
               {step === "quiz" && renderQuiz()}
               {step === "result" && renderResult()}
               {step === "certificate" && renderCertificate()}
-              {step === "contact" && renderContact()}
               {step === "home" && renderHome()}
               {step === "about" && renderAbout()}
+              {step === "contact" && renderContact()}
             </div>
           }
         />
-        <Route path="/contact"element={renderContact()} />
-        <Route path="/home" element={renderHome()} />
+        <Route
+          path="contact"
+          element={
+            <>
+              <div className="contact-us">
+                <div
+                  className="p-5"
+                  style={{
+                    backgroundColor: "rgb(14 83 142)",
+                    color: "white",
+                  }}
+                >
+                  <div className="header-content-wrapper p-3">
+                    <div className="header-content">
+                      <h1 className="header-heading pb-4">Get in touch</h1>
+                      <div className="header-description pb-2">
+                        Want to get in touch? We'd love to hear from you.
+                      </div>
+                      <div className="pb-5">Here's how you can reach us.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className="row d-flex justify-content-end gap-5 pe-3"
+                  style={{
+                    position: "relative",
+                    top: "-50px",
+                    width: "95%",
+                    marginLeft: "2rem",
+                    marginRight: "2rem",
+                  }}
+                >
+                  <div className="col-lg-4 col-md-4 col-sm-6 card p-4 m-2">
+                    <div className="d-flex justify-content-center fw-bold">
+                      Talk to us
+                    </div>
+                    <div className="p-3">
+                      Just pick up the phone to call our team member.
+                    </div>
+                    <div className="d-flex justify-content-center fw-bold">
+                      +91-1111-000-222
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-4 col-sm-6 card p-4 m-2 d-flex justify-content-center">
+                    <div className="d-flex justify-content-center fw-bold">
+                      Contact Customer Support
+                    </div>
+                    <div className="p-3 d-flex justify-content-center">
+                      Need a little help...
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      Don't worry… we're here for you.
+                    </div>
+                    <div className="d-flex justify-content-center pt-2 fw-bold">
+                      quiz-help@gmail.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+        <Route
+          path="home"
+          element={
+            <>
+              <div style={{
+      backgroundImage: 'url(./assets/quize.avif)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100vh',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '20px',
+    }}>
+      <div>
+        <h1 className="text-primary">Let's Quiz</h1>
+        <h2>Test your skills and become a master.</h2>
+        <p>We organize quizzes on various topics.</p>
+        <p>Sign up if you haven't already and get access to millions of quizzes on the topic of your interest.</p>
+        <p><b>Start Your Journey Here:</b></p>
+        <div>
+          <button className="btn btn-warning" type="button" onClick={() => setStep('register')}>
+            Start
+          </button>
+        </div>
+      </div>
+    </div>
+            </>
+          }
+        />
+        {/* <Route path="about" element={}/> */}
+        <Route path="/" element={<><div style={{
+      backgroundImage: 'url(./assets/quize.avif)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100vh',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '20px',
+    }}>
+      <div>
+        <h1 className="text-primary">Let's Quiz</h1>
+        <h2>Test your skills and become a master.</h2>
+        <p>We organize quizzes on various topics.</p>
+        <p>Sign up if you haven't already and get access to millions of quizzes on the topic of your interest.</p>
+        <p><b>Start Your Journey Here:</b></p>
+        <div>
+          <button className="btn btn-warning" type="button" onClick={() => setStep('register')}>
+            Start
+          </button>
+        </div>
+      </div>
+    </div></>}/>
       </Routes>
     </BrowserRouter>
-    </>
   );
 }
 
