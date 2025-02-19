@@ -856,6 +856,19 @@ function App() {
         </div>
       </div>
     </div></>}/>
+    <Route path="about" element={<>
+      <div style={{
+      backgroundImage: 'url(./assets/under.webp)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100vh',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '20px',
+    }}></div></>}/>
       </Routes>
     </BrowserRouter>
   );
