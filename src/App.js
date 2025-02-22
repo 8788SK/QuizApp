@@ -858,7 +858,7 @@ function App() {
     </div></>}/>
     <Route path="about" element={<>
       <div style={{
-      backgroundImage: 'url(./assets/under.webp)',
+      // backgroundImage: 'url(./assets/under.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '100vh',
@@ -868,7 +868,48 @@ function App() {
       alignItems: 'center',
       textAlign: 'center',
       padding: '20px',
-    }}></div></>}/>
+    }}>
+      
+      <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-lg-8 text-center">
+          <h1 className="mb-4">About Us</h1>
+          <p className="lead">
+            Welcome to <strong>QuizMaster</strong>, the ultimate platform for testing and enhancing your knowledge!
+            Our interactive quiz app is designed to make learning fun and engaging for everyone.
+          </p>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col-md-6">
+          <h3>Our Mission</h3>
+          <p>
+            At QuizMaster, we strive to create an enjoyable and educational experience for users
+            of all ages. Whether you're a student, a professional, or just someone who loves quizzes,
+            our app offers a wide variety of topics to keep you engaged.
+          </p>
+        </div>
+        <div className="col-md-6">
+          <h3>Why Choose Us?</h3>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">✔️ Thousands of exciting quiz questions</li>
+            <li className="list-group-item">✔️ User-friendly and interactive interface</li>
+            <li className="list-group-item">✔️ Real-time scoring and leaderboards</li>
+            <li className="list-group-item">✔️ Regularly updated with new content</li>
+          </ul>
+        </div>
+      </div>
+      <div className="row mt-4 text-center">
+        <div className="col">
+          <h3>Get in Touch</h3>
+          <p>
+            Have questions or feedback? Reach out to us at
+            <a href="mailto:support@quizapp.com" className="ms-1"> support@quizapp.com</a>.
+          </p>
+        </div>
+      </div>
+      </div>
+    </div></>}/>
       </Routes>
     </BrowserRouter>
   );
