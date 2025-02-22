@@ -632,41 +632,62 @@ function App() {
               </div>
   </>
  }
-  const renderCertificate = () => (
-    <div style={{
+ const renderCertificate = () => (
+  <div className="certificate-container d-flex justify-content-center align-items-center text-center p-3"
+    style={{
       backgroundImage: 'url(./assets/Grad.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '100vh',
+      minHeight: '100vh',
       width: '100%',
       display: 'flex',
-      justifyContent: 'center',
+      flexDirection: 'column',
       alignItems: 'center',
-      textAlign: 'center',
-      padding: '20px',
+      justifyContent: 'center',
     }}>
 
-      
-      <div className="container mt-5">
-      <div className="card shadow-lg p-5 mb-5 bg-white rounded" style={{ border: "5px solid gold" }}>
-      <div className="card-body text-center">
-      <h1 className="card-title">🎓 Certificate of Completion 🎓</h1>
-      <p className="lead">This is to certify that</p>
-      <h2>{candidateName}</h2>
-      <p>has successfully completed the <strong>{selectedTopic}</strong> certification exam.</p>
-      <p>They scored <strong>{score}/10</strong> in the exam.</p>
-      <p>Congratulations on your achievement!</p>
-          <button
-            className="btn btn-primary mt-3"
-            onClick={() => setStep('selectTopic')}
-            >
+    <div className="container d-flex justify-content-center">
+      <div className="card shadow-lg p-5 bg-white rounded text-center" 
+        style={{ 
+          border: "8px solid gold", 
+          maxWidth: "850px",  
+          width: "100%", 
+          textAlign: "center",
+          boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.3)", 
+        }}>
+        
+        {/* Certificate Header */}
+        <div className="card-body">
+          <h1 className="card-title text-warning fw-bold" style={{ fontSize: "2rem" }}>
+            🎓Certificate🎓
+          </h1>
+          <hr style={{ borderTop: "3px solid gold", width: "60%", margin: "10px auto" }} />
+
+          {/* Recipient Name */}
+          <p className="lead">This is to certify that</p>
+          <h2 className="text-primary fw-bold" style={{ fontSize: "2.2rem" }}>
+            {candidateName}
+          </h2>
+
+          {/* Certificate Details */}
+          <p className="mt-3">has successfully completed the</p>
+          <h3 className="fw-bold text-success">{selectedTopic} Certification Exam</h3>
+          <p>with an excellent score of</p>
+          <h4 className="fw-bold text-danger">{score}/10</h4>
+
+          <p className="fw-bold text-info">Congratulations on your achievement! 🎉</p>
+
+          {/* Retake Button */}
+          <button className="btn btn-primary mt-4 px-4 py-2 fw-bold shadow-sm" onClick={() => setStep('selectTopic')}>
             Retake Quiz
           </button>
         </div>
       </div>
     </div>
-    </div>
-  );
+  </div>
+);
+
+
 
   return (
     <BrowserRouter>
