@@ -352,6 +352,8 @@ function App() {
     setAnswers([]);
   };
 
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
   const handleAnswer = (index) => {
     const correctAnswer = quizData[selectedTopic][currentQuestion].answer;
     const newAnswers = [...answers, {
@@ -432,7 +434,7 @@ function App() {
             <button
               className="btn btn-success btn-lg m-3 shadow-sm hover-zoom w-50 mx-auto d-block"
               onClick={() => setStep('selectTopic')}
-              disabled={!candidateName.trim() || !email.trim()}
+              disabled={!candidateName.trim() || !isValidEmail(email)} 
             >
               Register
             </button>
