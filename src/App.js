@@ -558,6 +558,7 @@ function App() {
             <button
               className="btn btn-success btn-block mt-3"
               onClick={() => setStep('certificate')}
+              disabled={score < 5}
             >
               View Certificate
             </button>
@@ -645,7 +646,7 @@ function App() {
 
       
       <div className="container mt-5">
-      <div className="card shadow-lg p-5 mb-5 bg-white rounded" style={{ border: "10px solid gold" }}>
+      <div className="card shadow-lg p-5 mb-5 bg-white rounded" style={{ border: "5px solid gold" }}>
       <div className="card-body text-center">
       <h1 className="card-title">🎓 Certificate of Completion 🎓</h1>
       <p className="lead">This is to certify that</p>
