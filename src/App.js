@@ -671,8 +671,8 @@ function App() {
 
           {/* Certificate Details */}
           <p className="mt-3">has successfully completed the</p>
-          <h3 className="fw-bold text-success">{selectedTopic} Certification Exam</h3>
-          <p>with an excellent score of</p>
+          <h3 className="fw-bold text-success">{selectedTopic}</h3>
+          <p>Certificate with an excellent score of</p>
           <h4 className="fw-bold text-danger">{score}/10</h4>
 
           <p className="fw-bold text-info">Congratulations on your achievement! 🎉</p>
@@ -899,7 +899,7 @@ function App() {
         <div className="col-lg-8 text-center">
           <h1 className="mb-4">About Us</h1>
           <p className="lead">
-            Welcome to <strong>QuizMaster</strong>, the ultimate platform for testing and enhancing your knowledge!
+            Welcome to <strong>Quiz-App</strong>, the ultimate platform for testing and enhancing your knowledge!
             Our interactive quiz app is designed to make learning fun and engaging for everyone.
           </p>
         </div>
@@ -908,7 +908,7 @@ function App() {
         <div className="col-md-6">
           <h3>Our Mission</h3>
           <p>
-            At QuizMaster, we strive to create an enjoyable and educational experience for users
+            At Quiz-App, we strive to create an enjoyable and educational experience for users
             of all ages. Whether you're a student, a professional, or just someone who loves quizzes,
             our app offers a wide variety of topics to keep you engaged.
           </p>
