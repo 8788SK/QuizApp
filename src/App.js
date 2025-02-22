@@ -417,14 +417,14 @@ function App() {
             <h1 className="card-title text-light text-center mb-5">Welcome to the Quiz App</h1>
             <input
               type="text"
-              placeholder="Enter your name"
+              placeholder="Enter Name"
               className="form-control bg-light m-3 w-50 mx-auto"
               value={candidateName}
               onChange={(e) => setCandidateName(e.target.value)}
             />
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter E-mail"
               className="form-control bg-light m-3 w-50 mx-auto"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
