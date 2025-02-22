@@ -8,50 +8,50 @@ const quizData = {
     {
       "question": "What is the correct HTML element for inserting a line break?",
       "options": ["<break>", "<lb>", "<br>", "<line>"],
-      "answer": 3,
-      "explanation": "The <br> tag is used to insert a line break in HTML."
+      answer: 2,
+      explanation: "The <br> tag is used to insert a line break in HTML."
     },
     {
       "question": "Which HTML tag is used to define an unordered list?",
       "options": ["<ul>", "<ol>", "<li>", "<list>"],
-      "answer": 1,
-      "explanation": "The <ul> tag is used to define an unordered list in HTML."
+      answer: 0,
+      explanation: "The <ul> tag is used to define an unordered list in HTML."
     },
     {
       "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
       "options": ["title", "alt", "src", "href"],
-      "answer": 2,
-      "explanation": "The alt attribute specifies an alternate text for an image."
+      answer: 1,
+      explanation: "The alt attribute specifies an alternate text for an image."
     },
     {
       "question": "What is the correct HTML element for the largest heading?",
       "options": ["<heading>", "<h6>", "<h1>", "<head>"],
-      "answer": 3,
-      "explanation": "The <h1> element defines the largest heading in HTML."
+      answer: 2,
+      explanation: "The <h1> element defines the largest heading in HTML."
     },
     {
       "question": "Which HTML tag is used to create a hyperlink?",
       "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
-      "answer": 2,
-      "explanation": "The <a> tag is used to create a hyperlink in HTML."
+      answer: 1,
+      explanation: "The <a> tag is used to create a hyperlink in HTML."
     },
     {
       "question": "Which HTML tag is used to define a table?",
       "options": ["<table>", "<tab>", "<td>", "<tr>"],
-      "answer": 1,
-      "explanation": "The <table> tag is used to define a table in HTML."
+      answer: 0,
+      explanation: "The <table> tag is used to define a table in HTML."
     },
     {
       "question": "Which HTML tag is used to define an input field in a form?",
       "options": ["<input>", "<form>", "<textfield>", "<enter>"],
-      "answer": 1,
-      "explanation": "The <input> tag is used to define an input field in a form."
+      answer: 0,
+      explanation: "The <input> tag is used to define an input field in a form."
     },
     {
       "question": "Which HTML tag is used to define a footer for a document or section?",
       "options": ["<bottom>", "<footer>", "<foot>", "<section>"],
-      "answer": 2,
-      "explanation": "The <footer> tag is used to define a footer in HTML."
+      answer: 1,
+      explanation: "The <footer> tag is used to define a footer in HTML."
     },
     {
       "question": "Which doctype declaration is correct for HTML5?",
@@ -61,8 +61,8 @@ const quizData = {
         "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 5.0//EN\">",
         "<doctype html>"
       ],
-      "answer": 2,
-      "explanation": "The correct doctype for HTML5 is <!DOCTYPE html>."
+      answer: 1,
+      explanation: "The correct doctype for HTML5 is <!DOCTYPE html>."
     }
   ],
   CSS: [
@@ -74,20 +74,20 @@ const quizData = {
         "High-Level Text Markup Language",
         "Hyperlink and Text Markup Language"
       ],
-      "answer": 0,
-      "explanation": "HTML stands for HyperText Markup Language."
+      answer: 0,
+      explanation: "HTML stands for HyperText Markup Language."
     },
     {
       "question": "Which HTML tag is used to define an internal style sheet?",
       "options": ["<script>", "<style>", "<css>", "<link>"],
-      "answer": 1,
-      "explanation": "The <style> tag is used to define internal CSS styles."
+      answer: 1,
+      explanation: "The <style> tag is used to define internal CSS styles."
     },
     {
       "question": "Which property is used to change the background color in CSS?",
       "options": ["color", "bgcolor", "background-color", "background"],
-      "answer": 2,
-      "explanation": "The background-color property is used to change the background color."
+      answer: 2,
+      explanation: "The background-color property is used to change the background color."
     },
     {
       "question": "What is the correct way to apply a CSS className to an element?",
@@ -97,32 +97,32 @@ const quizData = {
         "<div style='classname'>",
         "<div css='classname'>"
       ],
-      "answer": 1,
-      "explanation": "CSS classes are applied using the className attribute, like <div className='classname'>."
+      answer: 1,
+      explanation: "CSS classes are applied using the className attribute, like <div className='classname'>."
     },
     {
       "question": "Which unit is NOT relative in CSS?",
       "options": ["em", "rem", "px", "%"],
-      "answer": 2,
-      "explanation": "px (pixels) is an absolute unit, whereas em, rem, and % are relative units."
+      answer: 2,
+      explanation: "px (pixels) is an absolute unit, whereas em, rem, and % are relative units."
     },
     {
       "question": "Which pseudo-className is used to style an element when a user hovers over it?",
       "options": [":hover", ":focus", ":active", ":visited"],
-      "answer": 0,
-      "explanation": "The :hover pseudo-className applies styles when the user hovers over an element."
+      answer: 0,
+      explanation: "The :hover pseudo-className applies styles when the user hovers over an element."
     },
     {
       "question": "Which of the following is NOT a valid CSS position value?",
       "options": ["static", "fixed", "absolute", "relative-fixed"],
-      "answer": 3,
-      "explanation": "'relative-fixed' is not a valid CSS position value."
+      answer: 3,
+      explanation: "'relative-fixed' is not a valid CSS position value."
     },
     {
       "question": "Which CSS property controls the text size?",
       "options": ["font-size", "text-style", "text-size", "font-style"],
-      "answer": 0,
-      "explanation": "The font-size property is used to control text size in CSS."
+      answer: 0,
+      explanation: "The font-size property is used to control text size in CSS."
     },
     
     {
@@ -133,8 +133,8 @@ const quizData = {
         "flexbox: true;",
         "container: flex;"
       ],
-      "answer": 0,
-      "explanation": "To create a flex container, use 'display: flex;'."
+      answer: 0,
+      explanation: "To create a flex container, use 'display: flex;'."
     },
     {
       "question": "How do you make a flex container in CSS?",
@@ -144,8 +144,8 @@ const quizData = {
         "flexbox: true;",
         "container: flex;"
       ],
-      "answer": 0,
-      "explanation": "To create a flex container, use 'display: flex;'."
+      answer: 0,
+      explanation: "To create a flex container, use 'display: flex;'."
     }
   ],
   JavaScript: [
