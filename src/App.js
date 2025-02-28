@@ -694,9 +694,9 @@ function App() {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-1">
           <div className="container">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               Quiz App
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -711,31 +711,31 @@ function App() {
             <div className=" collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
+                  <Link className="nav-link active" aria-current="page" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link active"
                     aria-current="page"
-                    href="contact"
+                    to="contact"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link active"
                     aria-current="page"
-                    href="about"
+                    to="about"
                   >
                     About Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -928,7 +928,7 @@ function App() {
           <h3>Get in Touch</h3>
           <p>
             Have questions or feedback? Reach out to us at
-            <a href="mailto:support@quizapp.com" className="ms-1"> support@quizapp.com</a>.
+            <Link to="mailto:support@quizapp.com" className="ms-1"> support@quizapp.com</Link>.
           </p>
         </div>
       </div>
