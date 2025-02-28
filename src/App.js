@@ -881,59 +881,82 @@ function App() {
       </div>
     </div></>}/>
     <Route path="about" element={<>
-      <div style={{
-      // backgroundImage: 'url(./assets/under.webp)',
+      <div className="d-flex justify-content-center align-items-center text-center p-3"
+    style={{
+      backgroundImage: 'url(./assets/quize.avif)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '100vh',
+      minHeight: '100vh',
       width: '100%',
       display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      padding: '20px',
+      flexDirection: 'column',
     }}>
-      
-      <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-lg-8 text-center">
-          <h1 className="mb-4">About Us</h1>
+
+    <div className="container d-flex justify-content-center">
+      <div className="card shadow-lg p-5 bg-white rounded text-center"
+        style={{
+          maxWidth: "850px",
+          width: "100%",
+          textAlign: "center",
+          boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.3)",
+        }}>
+        
+        <div className="card-body">
+          {/* Title */}
+          <h1 className="text-primary fw-bold">About Quiz-App</h1>
+          <hr style={{ borderTop: "3px solid #007bff", width: "60%", margin: "10px auto" }} />
+
+          {/* Introduction */}
           <p className="lead">
-            Welcome to <strong>Quiz-App</strong>, the ultimate platform for testing and enhancing your knowledge!
-            Our interactive quiz app is designed to make learning fun and engaging for everyone.
+            Welcome to <strong>Quiz-App</strong>, the ultimate platform to 
+            <strong> test your knowledge</strong> and <strong>enhance your skills </strong>
+            in various subjects! Whether you're a student, professional, or a quiz enthusiast, 
+            our interactive platform makes learning fun and rewarding.
           </p>
-        </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col-md-6">
-          <h3>Our Mission</h3>
-          <p>
-            At Quiz-App, we strive to create an enjoyable and educational experience for users
-            of all ages. Whether you're a student, a professional, or just someone who loves quizzes,
-            our app offers a wide variety of topics to keep you engaged.
-          </p>
-        </div>
-        <div className="col-md-6">
-          <h3>Why Choose Us?</h3>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">✔️ Thousands of exciting quiz questions</li>
-            <li className="list-group-item">✔️ User-friendly and interactive interface</li>
-            <li className="list-group-item">✔️ Real-time scoring and leaderboards</li>
-            <li className="list-group-item">✔️ Regularly updated with new content</li>
+
+          {/* Mission */}
+          <h3 className="fw-bold text-success mt-4">Our Mission</h3>
+          <ul className="list-group list-group-flush mx-auto" style={{ maxWidth: "600px", textAlign: "left" }}>
+            <li className="list-group-item">✅ Provide an <strong>interactive learning experience</strong>.</li>
+            <li className="list-group-item">✅ Cover a <strong>wide range of topics</strong> including HTML, CSS, JavaScript, and React.</li>
+            <li className="list-group-item">✅ Make knowledge <strong>accessible</strong> and <strong>engaging</strong> for everyone.</li>
+            <li className="list-group-item">✅ Encourage <strong>continuous self-improvement</strong> through quizzes.</li>
           </ul>
-        </div>
-      </div>
-      <div className="row mt-4 text-center">
-        <div className="col">
-          <h3>Get in Touch</h3>
+
+          {/* How It Works */}
+          <h3 className="fw-bold text-primary mt-4"> How It Works</h3>
+          <p className="mt-3">Our quiz platform is simple and easy to use:</p>
+          <ul className="list-group list-group-flush mx-auto" style={{ maxWidth: "600px", textAlign: "left" }}>
+            <li className="list-group-item">📌 <strong>Sign Up & Select a Topic:</strong> Choose from multiple subjects.</li>
+            <li className="list-group-item">📌 <strong>Answer Questions:</strong> Test your knowledge with multiple-choice questions.</li>
+            <li className="list-group-item">📌 <strong>Instant Feedback:</strong> Get explanations for correct and incorrect answers.</li>
+            <li className="list-group-item">📌 <strong>Earn Certificates:</strong> Score <strong>5 or more</strong> to receive a certificate of completion.</li>
+            <li className="list-group-item">📌 <strong>Improve & Retake:</strong> Didn’t pass? No worries! You can <strong>retake quizzes</strong> and try again.</li>
+          </ul>
+
+          {/* Why Choose Us */}
+          <h3 className="fw-bold text-warning mt-4">Why Choose Quiz-App?</h3>
+          <ul className="list-group list-group-flush mx-auto" style={{ maxWidth: "600px", textAlign: "left" }}>
+            <li className="list-group-item">✔ <strong>User-Friendly Interface:</strong> Easy to navigate and use.</li>
+            <li className="list-group-item">✔ <strong>Wide Range of Topics:</strong> HTML, CSS, JavaScript, React & more.</li>
+            <li className="list-group-item">✔ <strong>Real-Time Scoring:</strong> Instantly see your performance.</li>
+            <li className="list-group-item">✔ <strong>No Page Reloads:</strong> Smooth experience with React Router.</li>
+            <li className="list-group-item">✔ <strong>Certification System:</strong> Earn a certificate for high scores.</li>
+          </ul>
+
+          {/* Contact Info */}
+          <h3 className="fw-bold text-danger mt-4">Get in Touch</h3>
           <p>
-            Have questions or feedback? Reach out to us at
-            <Link to="mailto:support@quizapp.com" className="ms-1"> support@quizapp.com</Link>.
+            Have any <strong>questions, feedback, or suggestions</strong>? We'd love to hear from you!
           </p>
+          <p>📧 <strong>Email us at:</strong> <a href="mailto:quiz-help@gmail.com">quiz-help@gmail.com</a></p>
+
+          {/* Closing Note */}
+          <p className="fw-bold text-success mt-4">Start your learning journey today with Quiz-App! 🏆</p>
         </div>
       </div>
-      </div>
-    </div></>}/>
+    </div>
+  </div></>}/>
       </Routes>
     </BrowserRouter>
   );
